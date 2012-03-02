@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html lang="en" class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+<title>HTML5 responsive</title>
+
+
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/basic.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div id="page">
+	<header><img src="img/logo.jpg"></header>
+	<a href="#main" class="skip">Skip navigation</a>
+	<nav class="nav-primary">
+	<h3>Sections:</h3>
+		<ul>
+			<li><a href="#">Nav 1</a></li>
+			<li><a href="#">Nav 2</a></li>
+			<li class="nav-current"><a href="#">Nav 3</a></li>
+			<li><a href="#">Nav 4</a></li>
+			<li><a href="#">Nav 5</a></li>
+			<li><a href="#">Nav 6</a></li>
+		</ul>
+	</nav>
+	<div class="content">
+	<div id="intro">
+   <p>We offer services from strategy to UI and application design, to accessible front-end code development, and happily work with clients to find the right mix that supports their internal capabilities.</p>
+   </div>
+</div>
+	<div id="main">
+	<div id="primary">
+		<div class="section full">
+			<h1>Title of page</h1>
+			<p>While those at the coal face don't have sufficient view of the overall goals. Big is no longer impregnable working through a top-down, bottom-up approach, in order to build a shared view of what can be improved. To experience a profound paradigm shift, by moving executive focus from lag financial indicators to more actionable lead indicators, an investment program where cash flows exactly match shareholders' preferred time patterns of consumption. That will indubitably lay the firm foundations for any leading company taking full cognizance of organizational learning parameters and principles, whenever single-loop learning strategies go wrong. Whether the organization's core competences are fully in line, given market realities building flexibility through spreading knowledge and self-organization, by moving executive focus from lag financial indicators to more actionable lead indicators.</p>
+			<img src="img/mountains.jpg" />
+			<p>Maximization of shareholder wealth through separation of ownership from management the components and priorities for the change program motivating participants and capturing their expectations. In a collaborative, forward-thinking venture brought together through the merging of like minds. Building flexibility through spreading knowledge and self-organization, presentation of the process flow should culminate in idea generation, whenever single-loop learning strategies go wrong. Highly motivated participants contributing to a valued-added outcome. Exploitation of core competencies as an essential enabler, to ensure that non-operating cash outflows are assessed.</p>
+			
+		</div>
+		
+		
+		<div class="section full">
+			<h1>Full article</h1>
+			
+			<img src="img/stalking.jpg" />
+			<p>Maximization of shareholder wealth through separation of ownership from management the components and priorities for the change program motivating participants and capturing their expectations. In a collaborative, forward-thinking venture brought together through the merging of like minds. Building flexibility through spreading knowledge and self-organization, presentation of the process flow should culminate in idea generation, whenever single-loop learning strategies go wrong. Highly motivated participants contributing to a valued-added outcome. Exploitation of core competencies as an essential enabler, to ensure that non-operating cash outflows are assessed.</p>
+			
+		</div>
+		</div><!-- /end #primary -->
+		
+		<div id="secondary">
+		
+		<div class="section sub">
+		
+		<h1>sub of page</h1>
+		<img src="img/tiger.jpg" />
+			<p>While those at the coal face don't have sufficient view of the overall goals. Big is no longer impregnable working through a top-down, bottom-up approach, in order to build a shared view of what can be improved. To experience a profound paradigm shift, by moving executive focus from lag financial indicators to more</p>
+		</div>
+		
+		<div class="section sub">
+		<h1>sub of page 2</h1>
+		<img src="img/sunset.jpg" />
+			<p>While those at the coal face don't have sufficient view of the overall goals. Big is no longer impregnable working through a top-down, bottom-up approach, in order to build a shared view of what can be improved. To experience a profound paradigm shift, by moving executive focus from lag financial indicators to more</p>
+		</div>
+		
+		<div class="section half">
+		<h1>Half Page width content</h1>
+		<img src="img/space.jpg" />
+			
+			<p>The balanced scorecard, like the executive dashboard, is an essential tool big is no longer impregnable presentation of the process flow should culminate in idea generation. Defensive reasoning, the doom loop and doom zoom the strategic vision - if indeed there be one - is required to identify motivating participants and capturing their expectations. The vitality of conceptual synergies is of supreme importance taking full cognizance of organizational learning parameters and principles, measure the process, not the people. To experience a profound paradigm shift, maximization of shareholder wealth through separation of ownership from management the balanced scorecard, like the executive dashboard, is an essential tool. Building flexibility through spreading knowledge and self-organization, working through a top-down, bottom-up approach, an investment program where cash flows exactly match shareholders' preferred time patterns of consumption.</p>
+			<p>Whether the organization's core competences are fully in line, given market realities exploiting the productive lifecycle whenever single-loop learning strategies go wrong. The new golden rule gives enormous power to those individuals and units. By moving executive focus from lag financial indicators to more actionable lead indicators, to experience a profound paradigm shift, big is no longer impregnable.</p>
+		</div>
+		
+		</div><!-- /end #secondary -->
+	<br class="clear">
+	</div><!-- end #main -->
+	</div><!-- end #page -->
+	
+<!-- javascript is loaded here -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+
+<script type="text/javascript">
+ $('.nav-primary')
+      // test the menu to see if all items fit horizontally
+      .bind('testfit', function(){
+            var nav = $(this),
+                items = nav.find('a');
+                  
+            $('body').removeClass('nav-menu');                                
+                  
+            // when the nav wraps under the logo, or when options are stacked, display the nav as a menu              
+            if ( (nav.offset().top > nav.prev().offset().top) || ($(items[items.length-1]).offset().top > $(items[0]).offset().top) ) {
+            
+               // add a class for scoping menu styles
+               $('body').addClass('nav-menu');
+               
+            };                    
+         })
+      
+      // toggle the menu items' visiblity
+      .find('h3')
+         .bind('click focus', function(){
+            $(this).parent().toggleClass('expanded')
+         });   
+   
+   // ...and update the nav on window events
+   $(window).bind('load resize orientationchange', function(){
+      $('.nav-primary').trigger('testfit');
+   });
+
+</script>
+
+<!-- ie image fixer-->
+<script type="text/javascript" src="js/imgSizer.js"></script>
+</body>
+</html>
